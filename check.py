@@ -16,7 +16,7 @@ for m in re.finditer(r"<a[^>]*>", html):
     tag = m.group(0)
     if "wa-link" in tag:
         assert "data-msg" in tag, "wa-link sem data-msg: " + tag
-imgs = re.findall(r'<img[^>]+src="([^"]+)"', html)
+imgs = re.findall(r'<img[^>]+src="([^"]+)"', re.sub(r"<!--.*?-->", "", html, flags=re.S))
 for src in imgs:
     assert src.startswith("fotos/"), "img fora de fotos/: " + src
     assert os.path.exists(os.path.join(ROOT, src)), "foto ausente: " + src
