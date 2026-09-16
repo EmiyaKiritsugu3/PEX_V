@@ -1,0 +1,19 @@
+.gitignore
+  s_63e5d7d497894d::t_f69528bb70d9f1 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7559b1be8d523366ca7d4be53678fdc543d1200f",
+  "prompts": {},
+  "sessions": {
+    "s_63e5d7d497894d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "370b57ee-0659-406a-b54f-0dbaf98e6e50",
+        "model": "muse-spark-1.3-contributor-free"
+      },
+      "human_author": "EmiyaKiritsugu3 <inamarjunior2@gmail.com>"
+    }
+  }
+}
