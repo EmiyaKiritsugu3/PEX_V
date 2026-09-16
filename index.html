@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Móveis planejados sob encomenda</title>
+<meta name="description" content="Móveis planejados sob encomenda, produção própria em garagem. Veja modelos e peça orçamento no WhatsApp.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;line-height:1.5;color:#222}
+header.hero{padding:3rem 1rem;text-align:center;background:#f4f1ea}
+section{padding:2rem 1rem;max-width:960px;margin:0 auto}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{border:1px solid #ddd;border-radius:8px;padding:1rem}
+.card h3{margin:.8rem 0 .5rem}
+.ph{background:#ddd;border-radius:8px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:#555}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:bold}
+.wa-fixo{position:fixed;right:1rem;bottom:1rem}
+.aviso{background:#fff3cd;border:1px solid #e6c200;padding:1rem;border-radius:8px}
+footer{text-align:center;padding:2rem 1rem;color:#666}
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+<h1>Móveis planejados sob encomenda</h1>
+<p>Produção própria em garagem. Veja modelos, escolha, chame no WhatsApp.</p>
+<p><a class="btn wa-link" data-msg="Olá! Vi o site e quero um orçamento.">Pedir orçamento no WhatsApp</a></p>
+</header>
+<section id="sobre">
+<h2>Sobre</h2>
+<p>Marcenaria própria em garagem: cada peça feita sob medida para seu espaço.</p>
+<p>Atendimento direto com quem produz, sem intermediário.</p>
+<div class="ph">Foto do marceneiro em breve</div>
+</section>
+<section id="galeria">
+<h2>Modelos</h2>
+<!-- FOTO REAL: apague o div.ph do card e cole no lugar:
+<img src="fotos/guarda-roupa.jpg" alt="Guarda-roupa planejado de 6 portas" width="800" height="600" loading="lazy" onerror="fotoFail(this)"> -->
+<div class="grid">
+<div class="card"><div class="ph">Guarda-roupa · sob medida</div><h3>Guarda-roupa</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de guarda-roupa sob medida.">Pedir orçamento</a></p></div>
+<div class="card"><div class="ph">Cozinha planejada · sob medida</div><h3>Cozinha planejada</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de cozinha planejada.">Pedir orçamento</a></p></div>
+<div class="card"><div class="ph">Rack e painel · sob medida</div><h3>Rack e painel para TV</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de rack e painel para TV.">Pedir orçamento</a></p></div>
+<div class="card"><div class="ph">Escrivaninha · sob medida</div><h3>Escrivaninha home office</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de escrivaninha para home office.">Pedir orçamento</a></p></div>
+<div class="card"><div class="ph">Armário de banheiro · sob medida</div><h3>Armário de banheiro</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de armário de banheiro.">Pedir orçamento</a></p></div>
+<div class="card"><div class="ph">Prateleiras e nichos · sob medida</div><h3>Prateleiras e nichos</h3><p><a class="btn wa-link" data-msg="Olá! Quero orçamento de prateleiras e nichos.">Pedir orçamento</a></p></div>
+</div>
+</section>
+<section id="processo">
+<h2>Como encomendar</h2>
+<ol>
+<li>Chame no WhatsApp e conte o que precisa.</li>
+<li>Receba medida e orçamento.</li>
+<li>Acompanhe a produção na garagem.</li>
+<li>Receba e confira a entrega.</li>
+</ol>
+</section>
+<section id="contato">
+<h2>Contato</h2>
+<p id="sem-contato" class="aviso" hidden>Contato indisponível: número de WhatsApp ainda não configurado.</p>
+<p><a class="btn wa-link" data-msg="Olá! Vi o site e quero conversar.">Chamar no WhatsApp</a></p>
+</section>
+<a class="btn wa-fixo wa-link" data-msg="Olá! Vi o site e quero um orçamento.">WhatsApp</a>
+<footer>Site estático · contato só via WhatsApp</footer>
+<noscript><p style="text-align:center">Sem JavaScript? Salve o número do marceneiro e chame no WhatsApp.</p></noscript>
+<script>
+var NUMERO_WHATSAPP = ""; // SÓ dígitos com DDI. Preencher quando o amigo passar o número real.
+function fotoFail(el){var d=document.createElement("div");d.className="ph";d.textContent=el.alt||"Foto em breve";el.replaceWith(d);}
+var btns=document.querySelectorAll(".wa-link");
+if(!/^\d{10,}$/.test(NUMERO_WHATSAPP)){
+btns.forEach(function(b){b.style.display="none";});
+document.getElementById("sem-contato").hidden=false;
+}else{
+btns.forEach(function(b){
+b.href="https://wa.me/"+NUMERO_WHATSAPP+"?text="+encodeURIComponent(b.getAttribute("data-msg")||"Olá!");
+b.target="_blank";b.rel="noopener";
+});
+}
+</script>
+</body>
+</html>
