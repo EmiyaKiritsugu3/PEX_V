@@ -1,0 +1,20 @@
+index.html
+  s_63e5d7d497894d::t_e02dfab806056f 410
+  s_63e5d7d497894d::t_c050857e2fb9f7 6-19,21-409,411-673,677-698,700-734,736,738-824,826,828-1066,1068,1070-1099,1101,1103-1120,1122-1136
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2aaf89a695b5c3a9f8eef03c9790e017a62084d3",
+  "prompts": {},
+  "sessions": {
+    "s_63e5d7d497894d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "370b57ee-0659-406a-b54f-0dbaf98e6e50",
+        "model": "gemini-3.8-flash"
+      },
+      "human_author": "EmiyaKiritsugu3 <inamarjunior2@gmail.com>"
+    }
+  }
+}
