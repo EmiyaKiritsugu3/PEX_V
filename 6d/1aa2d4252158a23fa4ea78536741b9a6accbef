@@ -1,0 +1,14 @@
+index.html
+  h_5d68cec99831c8 64,67,98,139,146,165,170,172,174,176,180,182,191-193,224,259,262,268,283,285,287,294-297,304-305,324-325,419,426,430,669-675,677-683
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6d1aa2d4252158a23fa4ea78536741b9a6accbef",
+  "prompts": {},
+  "humans": {
+    "h_5d68cec99831c8": {
+      "author": "EmiyaKiritsugu3 <inamarjunior2@gmail.com>"
+    }
+  }
+}
