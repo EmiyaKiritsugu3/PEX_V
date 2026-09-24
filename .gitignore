@@ -1,2 +1,4 @@
 .remember/
 *.pdf
+# Local session handoff (agent scratch, never commit).
+HANDOFF.md
