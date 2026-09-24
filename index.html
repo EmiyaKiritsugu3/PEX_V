@@ -405,6 +405,39 @@ section {
   font-size: 0.85rem;
 }
 
+.oficina-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.oficina-strip figure {
+  margin: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--line-subtle);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-warm);
+}
+
+.oficina-strip img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  background: #fbf9f5;
+}
+
+.oficina-strip figcaption {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  padding: 0.6rem 0.8rem;
+  border-top: 1px solid var(--line-subtle);
+}
+
 @media (max-width: 820px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -842,6 +875,21 @@ footer p {
         </svg>
       </div>
     </div>
+  </div>
+
+  <div class="oficina-strip">
+    <figure>
+      <img src="fotos/oficina-bancada.jpg" alt="Bancada de trabalho e painel de ferramentas da oficina" width="1280" height="720" loading="lazy" onerror="fotoFail(this)">
+      <figcaption>BANCADA + FERRAMENTAL</figcaption>
+    </figure>
+    <figure>
+      <img src="fotos/oficina-serra.jpg" alt="Serra de bancada e chapas de MDF em produção" width="1280" height="720" loading="lazy" onerror="fotoFail(this)">
+      <figcaption>CORTE + CHAPAS EM PRODUÇÃO</figcaption>
+    </figure>
+    <figure>
+      <img src="fotos/oficina-paineis.jpg" alt="Estoque de painéis e área de corte da oficina" width="1280" height="720" loading="lazy" onerror="fotoFail(this)">
+      <figcaption>PAINÉIS + ÁREA DE CORTE</figcaption>
+    </figure>
   </div>
 </section>
 
