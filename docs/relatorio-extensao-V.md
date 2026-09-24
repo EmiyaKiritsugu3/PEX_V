@@ -111,7 +111,61 @@ projeto_de_extensão_V/
 
 ---
 
-## 8. Resultados Esperados e Próximos Passos
+## 8. Metodologia e Cronograma de Execução
+
+O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga horária total de 40 horas dedicadas ao componente curricular, seguindo a sequência natural de uma intervenção extensionista: compreender a realidade, projetar a solução, construir, validar e implantar com documentação.
+
+### 8.1 Levantamento e Diagnóstico (8 horas)
+
+**Atividades Realizadas**
+* Visitas à marcenaria e registro fotográfico do espaço de trabalho (oficina em garagem);
+* Conversas com o artesão responsável para mapear a rotina de atendimento e os gargalos de captação de clientes;
+* Levantamento das restrições financeiras (ausência de orçamento para SaaS/servidores) e técnicas (sem conhecimento de TI para manutenção);
+* Formalização da parceria por meio do Termo de Autorização para realização das atividades extensionistas.
+
+### 8.2 Design e Prototipação (8 horas)
+
+**Atividades Realizadas**
+* Elaboração da especificação técnica (`docs/superpowers/specs/2026-09-21-pex-v-nota-academica-design.md`);
+* Definição da identidade editorial artesanal (tipografia Fraunces + Outfit + DM Mono, paleta madeira/linho);
+* Prototipação da estrutura de página única: Hero, Sobre, Galeria de Modelos (6 nichos), Fluxo em 4 passos e Contato;
+* Desenho dos esquemas técnicos em SVG inline como placeholders tolerantes à ausência de fotos.
+
+### 8.3 Desenvolvimento da Vitrine (12 horas)
+
+**Atividades Realizadas**
+* Implementação do `index.html` em arquivo único (HTML5 + CSS responsivo + JS inline), sem dependências de build;
+* Implementação do encaminhamento semântico via WhatsApp (`wa.me` + `encodeURIComponent`) com mensagens pré-codificadas por modelo;
+* Tratamento defensivo para número não configurado (ocultação dos botões + aviso `#sem-contato`);
+* Pasta `fotos/` para atualização do portfólio pelo próprio artesão via substituição de arquivos locais.
+
+### 8.4 Validação e Testes (6 horas)
+
+**Atividades Realizadas**
+* Desenvolvimento do verificador automatizado `check.py` (constante WhatsApp única, ausência de `fetch`, `data-msg` em todos os `wa-link`, integridade de `fotos/`);
+* Validação de abertura direta em `file://` (sem servidor), garantindo funcionamento offline local;
+* Testes de responsividade com ênfase em telas de 360px (micro-ritmo) e navegação mobile;
+* Inserção das 3 fotos reais da oficina e revalidação integral.
+
+### 8.5 Implantação e Documentação (6 horas)
+
+**Atividades Realizadas**
+* Publicação da vitrine no GitHub Pages a partir da branch `main` (`https://emiyakiritsugu3.github.io/PEX_V/`);
+* Versionamento do trabalho em repositório público com Pull Request revisado e mergeado;
+* Redação deste relatório e organização da documentação acadêmica em `docs/`;
+* Preenchimento e conferência do Termo de Autorização junto à organização parceira.
+
+---
+
+## 9. Resultados Obtidos
+
+A intervenção entregou uma vitrine digital funcional, publicada e validada, que centraliza a apresentação dos modelos fabricáveis e qualifica o primeiro contato via WhatsApp. Mesmo em caráter de demonstração acadêmica, foi possível estruturar:
+
+* Vitrine de página única publicada em URL pública, com carregamento instantâneo;
+* Galeria de 6 modelos padronizados (quarto, cozinha, sala, home office, banheiro, estante) com mensagens de orçamento específicas;
+* Registro fotográfico real da oficina (bancada, serra, painéis) integrado à seção Sobre;
+* Canal de conversão direto via WhatsApp, com fallback informativo quando o número comercial ainda não está configurado;
+* Custo recorrente zero e manutenção delegável ao próprio artesão.
 
 ### Resultados Esperados
 * Redução de 70% no tempo gasto explicando dimensões e modelos básicos durante a triagem inicial;
@@ -120,8 +174,71 @@ projeto_de_extensão_V/
 * Zero custo recorrente para o artesão ao longo do ciclo de vida da aplicação.
 
 ### Próximos Passos
-1. Coleta e inserção de fotos reais de projetos finalizados na pasta `fotos/`;
+1. Coleta e inserção de fotos reais de projetos finalizados (móveis entregues) na pasta `fotos/`;
 2. Substituição da constante `NUMERO_WHATSAPP` pelo número comercial definitivo;
-3. Publicação em domínio gratuito (ex: Vercel ou Netlify);
-4. Coleta de dados quantitativos de novos clientes contactados após 30 dias de implantação.
+3. Coleta de dados quantitativos de novos clientes contactados após 30 dias de implantação.
+
+---
+
+## 10. Alinhamento com a Área de Ciência da Computação
+
+O projeto permitiu aplicar conhecimentos fundamentais do curso de Ciência da Computação, incluindo:
+
+**Desenvolvimento Web**
+Construção de página responsiva com HTML5 semântico, CSS moderno (grid, variáveis, media queries) e JavaScript client-side para composição dinâmica de links.
+
+**Engenharia de Software**
+Aplicação dos princípios YAGNI e KISS, validação automatizada estática (`check.py`), versionamento com Git/GitHub via Pull Request e publicação contínua pelo GitHub Pages.
+
+**Interação Humano-Computador (IHC)**
+Projeto mobile-first para público de baixa conectividade, hierarquia visual editorial, tratamento de estados vazios (placeholders SVG, aviso de contato indisponível) e jornada de conversão em 4 passos.
+
+**Redes e Infraestrutura**
+Hospedagem estática em borda (entrega HTTP, cache e HTTPS delegados à plataforma), página completa em ~40 KB para operação em redes 3G/4G restritas.
+
+**Sustentabilidade Computacional (Green Software)**
+Arquitetura sem backend ocioso: zero consumo de CPU em nuvem fora do momento do acesso, em contraste com SPAs pesadas com runtime e SSR contínuos.
+
+---
+
+## 11. Conclusões e Aprendizados
+
+A realização deste Projeto de Extensão V proporcionou experiência prática na análise de um microempreendimento real e no desenvolvimento de uma solução tecnológica sob medida para suas restrições — financeiras, técnicas e operacionais. O contato direto com a marcenaria permitiu compreender que, para pequenos negócios informais, a melhor engenharia é a que o próprio artesão consegue sustentar.
+
+O projeto demonstrou, em caráter de demonstração acadêmica, como uma intervenção frugal pode profissionalizar a apresentação comercial e organizar o atendimento sem impor custos ou complexidade ao parceiro comunitário.
+
+**Principais Aprendizados**
+* Desenvolvimento web estático performático e responsivo;
+* Engenharia frugal e análise de custo total (TCO) como critério arquitetural;
+* Validação automatizada e testes de compatibilidade local (`file://`);
+* Publicação e versionamento com GitHub (PR, merge, Pages);
+* Levantamento de requisitos com cliente não técnico e formalização via Termo de Autorização;
+* Escrita técnica acadêmica com evidências comprobatórias.
+
+Além do crescimento técnico, o projeto reforçou a importância da extensão universitária como ponte entre o conhecimento acadêmico e as necessidades concretas da comunidade local.
+
+---
+
+## 12. Evidências Comprobatórias
+
+**Repositório do Código-Fonte**
+https://github.com/EmiyaKiritsugu3/PEX_V
+
+**Website do Projeto (GitHub Pages)**
+https://emiyakiritsugu3.github.io/PEX_V/
+
+**Estrutura do Projeto**
+* `index.html` → vitrine completa (HTML5 + CSS responsivo + JS inline);
+* `check.py` → verificador automatizado de integridade;
+* `fotos/` → `oficina-bancada.jpg`, `oficina-serra.jpg`, `oficina-paineis.jpg` (registro real da oficina);
+* `docs/relatorio-extensao-V.md` → documentação acadêmica formal (este relatório);
+* `docs/superpowers/` → especificação técnica e plano de engenharia;
+* `Termo+de+Autorizacao-PEX-preenchido-final.pdf` → Termo de Autorização preenchido e conferido com a organização parceira (JS Planejados – Móveis sob medida, São João do Sabugi/RN).
+
+**Interfaces Desenvolvidas**
+* Hero com proposta de valor e chamada para WhatsApp;
+* Seção Sobre com procedência artesanal, esquema técnico e fotos da oficina;
+* Galeria de 6 modelos sob medida com orçamento contextual por modelo;
+* Fluxo de 4 passos (Contato → Cotação → Produção → Entrega);
+* Contato fixo e botão flutuante de WhatsApp com fallback informativo.
 
