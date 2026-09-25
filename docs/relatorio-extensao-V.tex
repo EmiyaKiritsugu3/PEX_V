@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \usepackage{lmodern}
 \usepackage[top=3cm,bottom=2cm,left=3cm,right=2cm]{geometry}
 \usepackage{setspace}
@@ -11,6 +11,7 @@
 \hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{6pt}
+\sloppy
 \onehalfspacing
 \begin{document}
 \begin{center}
@@ -33,30 +34,32 @@ Website: & \url{https://emiyakiritsugu3.github.io/PEX_V/} \\
 
 
 
-
-
-
 \section{Sumário Executivo}
-
 
 O presente Projeto de Extensão V teve como propósito intervir nos gargalos de captação, apresentação e comunicação de um microempreendimento artesanal do ramo de marcenaria de móveis planejados, operado informalmente em espaço residencial (garagem).
 
-
 Diferente do cenário do Projeto de Extensão IV (focado na automação de processos administrativos e prescrições de treinos em uma academia comercial com Next.js, Prisma e IA), a presente demanda exigia uma abordagem de \textbf{Engenharia Frugal} e \textbf{Sustentabilidade Operacional (TCO Zero)}. O parceiro comunitário não possuía orçamento para infraestrutura de servidores, nem conhecimento técnico para gerenciar bancos de dados ou pipelines de compilação complexos.
-
 
 Como intervenção tecnológica, desenvolveu-se uma plataforma web estática de página única (\textit{Single-Page Showcase}), focada em alta performance, carregamento instantâneo em redes móveis restritas (3G/4G) e conversão imediata para atendimento via WhatsApp. A solução eliminou qualquer dependência de backend pago, custos recorrentes de hospedagem e complexidade de manutenção, permitindo que o próprio artesão atualize seu portfólio substituindo arquivos locais de imagem.
 
 
 
-
-
 \section{Contextualização e Diagnóstico da Situação-Problema}
-
 
 A marcenaria em análise opera no modelo sob encomenda, focada na fabricação de armários, cozinhas compactas, bancadas de trabalho e nichos planejados. Embora o artesão detenha excelente domínio prático do ofício, o empreendimento sofria de severas restrições operacionais e mercadológicas:
 
+\begin{enumerate}[leftmargin=*]
+\item[\textbf{Dependência Exclusiva do Boca a Boca:}] A clientela restringia-se ao círculo imediato de vizinhança e indicações familiares.
+\item[\textbf{Ausência de Referencial Visual Padronizado:}] Clientes solicitavam orçamentos sem conhecer o padrão de acabamento, exigindo visitas presenciais demoradas ou envio desordenado de fotos dispersas na galeria do celular.
+\item[\textbf{Assimetria de Informações na Triagem:}] As conversas iniciais demandavam tempo excessivo do marceneiro para explicar modelos básicos, medidas aproximadas e prazos, subtraindo horas produtivas da bancada de trabalho.
+\item[\textbf{Vulnerabilidade Financeira:}] Impossibilidade de arcar com mensalidades de plataformas SaaS (Shopify, Wix, construtores pagos) ou custos de servidores dedicados em nuvem.
+\end{enumerate}
 
+
+
+\section{Análise Crítica dos Processos}
+
+\subsection{Processo Operacional Anterior}
 \begin{enumerate}[leftmargin=*]
 \item O cliente entrava em contato por telefone ou mensagem sem contexto prévio;
 \item O marceneiro interrompia a fabricação manual para responder e buscar fotos antigas no celular;
@@ -64,8 +67,17 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 \item Dificuldade de estabelecer credibilidade profissional inicial com novos clientes fora do bairro.
 \end{enumerate}
 
-
 \subsection{Principais Problemas Identificados}
+\begin{itemize}[leftmargin=*]
+\item[\textbf{Custo de Oportunidade Elevado:}] O tempo gasto em triagens repetitivas reduzia o tempo de fabricação e montagem;
+\item[\textbf{Falta de Vitrine Centralizada 24/7:}] Perda de oportunidades comerciais fora do horário de trabalho;
+\item[\textbf{Fragmentação Visual:}] Comunicação amadora e sem identidade consolidada.
+\end{itemize}
+
+
+
+\section{Análise de Causa Raiz -- Técnica dos 5 Porquês}
+
 \begin{itemize}[leftmargin=*]
 \item[\textbf{Problema Central:}] Baixo volume de orçamentos qualificados e sobrecarga de atendimento manual.
 \end{itemize}
@@ -76,43 +88,63 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 \item \textit{Por que essas ferramentas são inacessíveis para a realidade da garagem?} Exigem custos recorrentes (mensalidades/servidores) e conhecimentos de TI para atualização que o marceneiro não possui.
 \item \textit{Por que não se adotou uma solução simplificada antes?} Presunção de que soluções web exigem bancos de dados complexos e servidores contínuos.
 \end{enumerate}
+\begin{itemize}[leftmargin=*]
 \item[\textbf{Causa Raiz Identificada:}] Falta de uma solução tecnológica sob medida, regida pela frugalidade, que conecte a vitrine ao canal direto de conversão (WhatsApp) sem custos e sem atrito operacional.
 \end{itemize}
 
 
 
-
-
 \section{Fatores-Chave para a Intervenção Tecnológica}
-
 
 \subsection{Fator Humano e Cognitivo}
 A equipe operacional consiste em uma única pessoa, responsável tanto pela produção física dos móveis quanto pela administração. A interface precisa ser autoexplicativa, sem exigir painel administrativo (CMS) complexo ou logins.
 
-
 \subsection{Fator Financeiro (TCO Zero)}
 O projeto adota a premissa de custo contínuo igual a zero. Utiliza arquitetura estática publicada em plataforma de borda gratuita (GitHub Pages), sem necessidade de banco de dados relacional pago ou serviços em segundo plano.
 
-
 \subsection{Fator de Mobilidade e Conectividade}
 A grande maioria dos clientes acessa a plataforma via smartphone em conexões de baixa largura de banda. A página completa pesa $\sim$42 KB (excluindo imagens), sem bloqueios de renderização por bibliotecas pesadas.
-
 
 \subsection{Fator de Sustentabilidade Técnica (Green Software Engineering)}
 Evitou-se o desperdício computacional típico de SPAs pesadas (Node runtime, SSR, ORM). O código HTML/CSS puro roda diretamente no cliente sem consumo ocioso de CPU em nuvem.
 
 
 
-
-
 \section{Proposição e Justificativa Arquitetural}
-
 
 Em contraste com o PEX IV (onde a complexidade pedagógica e biométrica exigia persistência relacional com Prisma e sugestões via IA), a engenharia aplicada no PEX V baseou-se nos princípios \textbf{YAGNI} (\textit{You Aren't Gonna Need It}) e \textbf{KISS} (\textit{Keep It Simple, Stupid}).
 
-
 \subsection{Decisão Arquitetural: Arquitetura Estática Desacoplada}
 \begin{itemize}[leftmargin=*]
+\item[\textbf{Arquivo Único (\texttt{index.html}):}] CSS e JS estritamente inline, garantindo carregamento atômico em uma única requisição HTTP;
+\item[\textbf{Galeria Tolerante a Falhas:}] Estrutura concebida para exibir placeholders informativos caso as fotos estejam ausentes, e substituição gradual por fotos locais na pasta \texttt{fotos/} com tratativa nativa de erro (\texttt{onerror});
+\item[\textbf{Encaminhamento Semântico via WhatsApp (\texttt{wa.me}):}] Botões contextuais para cada modelo com mensagens pré-codificadas (\texttt{encodeURIComponent}), entregando o cliente já qualificado para o fechamento da venda;
+\item[\textbf{Validação Automatizada Local (\texttt{check.py}):}] Script em Python puro para verificação estática de integridade (links, tags, integridade de caminhos de imagem e ausência de bloqueios em ambiente local \texttt{file://}).
+\end{itemize}
+
+
+
+\section{Estrutura do Sistema e Implementação}
+
+\begin{verbatim}
+projeto_de_extensão_V/
++-- index.html                     # Vitrine completa (HTML5 + CSS responsivo + JS inline)
++-- check.py                       # Verificador automatizado de integridade
++-- .gitignore                     # Governança de repositório
++-- fotos/                         # Registro fotográfico real da oficina
+|   +-- oficina-bancada.jpg
+|   +-- oficina-serra.jpg
+|   \-- oficina-paineis.jpg
+\-- docs/
+    +-- relatorio-extensao-V.md    # Documentação acadêmica formal (este relatório)
+    \-- superpowers/               # Especificação técnica e plano de engenharia
+        +-- specs/2026-09-16-galeria-moveis-planejados-design.md
+        +-- specs/2026-09-21-pex-v-nota-academica-design.md
+        \-- plans/2026-09-16-galeria-moveis-planejados.md
+\end{verbatim}
+
+\subsection{Principais Seções Implementadas}
+\begin{enumerate}[leftmargin=*]
 \item[\textbf{Hero Section:}] Proposta de valor direta e chamada principal de ação;
 \item[\textbf{Sobre:}] Apresentação da procedência artesanal e atendimento direto;
 \item[\textbf{Galeria de Modelos:}] 6 nichos padronizados com mensagens específicas de orçamento;
@@ -122,28 +154,41 @@ Em contraste com o PEX IV (onde a complexidade pedagógica e biométrica exigia 
 
 
 
-
-
 \section{Metodologia e Cronograma de Execução}
-
 
 O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga horária total de 40 horas dedicadas ao componente curricular, seguindo a sequência natural de uma intervenção extensionista: compreender a realidade, projetar a solução, construir, validar e implantar com documentação.
 
-
 \subsection{Levantamento e Diagnóstico (8 horas)}
-
 
 \paragraph{Atividades Realizadas}
 \begin{itemize}[leftmargin=*]
-\item Elaboração da especificação técnica (\texttt{docs/superpowers/specs/2026-09-21-pex-v-nota-academica-design.md});
+\item Visitas à marcenaria e registro fotográfico do espaço de trabalho (oficina em garagem);
+\item Conversas com o artesão responsável para mapear a rotina de atendimento e os gargalos de captação de clientes;
+\item Levantamento das restrições financeiras (ausência de orçamento para SaaS/servidores) e técnicas (sem conhecimento de TI para manutenção);
+\item Formalização da parceria por meio do Termo de Autorização para realização das atividades extensionistas.
+\end{itemize}
+
+\subsection{Design e Prototipação (8 horas)}
+
+\paragraph{Atividades Realizadas}
+\begin{itemize}[leftmargin=*]
+\item Elaboração da especificação técnica (\path{docs/superpowers/specs/2026-09-21-pex-v-nota-academica-design.md});
 \item Definição da identidade editorial artesanal (tipografia Fraunces + Outfit + DM Mono, paleta madeira/linho);
 \item Prototipação da estrutura de página única: Hero, Sobre, Galeria de Modelos (6 nichos), Fluxo em 4 passos e Contato;
 \item Desenho dos esquemas técnicos em SVG inline como placeholders tolerantes à ausência de fotos.
 \end{itemize}
 
-
 \subsection{Desenvolvimento da Vitrine (12 horas)}
 
+\paragraph{Atividades Realizadas}
+\begin{itemize}[leftmargin=*]
+\item Implementação do \texttt{index.html} em arquivo único (HTML5 + CSS responsivo + JS inline), sem dependências de build;
+\item Implementação do encaminhamento semântico via WhatsApp (\texttt{wa.me} + \texttt{encodeURIComponent}) com mensagens pré-codificadas por modelo;
+\item Tratamento defensivo para número não configurado (ocultação dos botões + aviso \texttt{\#sem-contato});
+\item Pasta \texttt{fotos/} para atualização do portfólio pelo próprio artesão via substituição de arquivos locais.
+\end{itemize}
+
+\subsection{Validação e Testes (6 horas)}
 
 \paragraph{Atividades Realizadas}
 \begin{itemize}[leftmargin=*]
@@ -153,11 +198,22 @@ O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga
 \item Inserção das 3 fotos reais da oficina e revalidação integral.
 \end{itemize}
 
-
 \subsection{Implantação e Documentação (6 horas)}
 
-
 \paragraph{Atividades Realizadas}
+\begin{itemize}[leftmargin=*]
+\item Publicação da vitrine no GitHub Pages a partir da branch \texttt{main} (\texttt{https://emiyakiritsugu3.github.io/PEX\_V/});
+\item Versionamento do trabalho em repositório público com Pull Request revisado e mergeado;
+\item Redação deste relatório e organização da documentação acadêmica em \texttt{docs/};
+\item Preenchimento e conferência do Termo de Autorização junto à organização parceira.
+\end{itemize}
+
+
+
+\section{Resultados Obtidos}
+
+A intervenção entregou uma vitrine digital funcional, publicada e validada, que centraliza a apresentação dos modelos fabricáveis e qualifica o primeiro contato via WhatsApp. Mesmo em caráter de demonstração acadêmica, foi possível estruturar:
+
 \begin{itemize}[leftmargin=*]
 \item Vitrine de página única publicada em URL pública, com carregamento instantâneo;
 \item Galeria de 6 modelos padronizados (guarda-roupa, cozinha, rack/painel, home office, gabinete de banheiro, estante) com mensagens de orçamento específicas;
@@ -166,9 +222,16 @@ O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga
 \item Custo recorrente zero e manutenção delegável ao próprio artesão.
 \end{itemize}
 
-
 \subsection{Resultados Esperados}
 \begin{itemize}[leftmargin=*]
+\item Redução de 70\% no tempo gasto explicando dimensões e modelos básicos durante a triagem inicial;
+\item Aumento da taxa de conversão através de mensagens pré-formatadas no WhatsApp;
+\item Estabelecimento de uma identidade profissional para o empreendimento perante o mercado local;
+\item Zero custo recorrente para o artesão ao longo do ciclo de vida da aplicação.
+\end{itemize}
+
+\subsection{Próximos Passos}
+\begin{enumerate}[leftmargin=*]
 \item Coleta e inserção de fotos reais de projetos finalizados (móveis entregues) na pasta \texttt{fotos/};
 \item Substituição da constante \texttt{NUMERO\_WHATSAPP} pelo número comercial definitivo;
 \item Coleta de dados quantitativos de novos clientes contactados após 30 dias de implantação.
@@ -176,47 +239,56 @@ O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga
 
 
 
-
-
 \section{Alinhamento com a Área de Ciência da Computação}
 
-
 O projeto permitiu aplicar conhecimentos fundamentais do curso de Ciência da Computação, incluindo:
-
 
 \paragraph{Desenvolvimento Web}
 Construção de página responsiva com HTML5 semântico, CSS moderno (grid, variáveis, media queries) e JavaScript client-side para composição dinâmica de links.
 
-
 \paragraph{Engenharia de Software}
 Aplicação dos princípios YAGNI e KISS, validação automatizada estática (\texttt{check.py}), versionamento com Git/GitHub via Pull Request e publicação contínua pelo GitHub Pages.
-
 
 \paragraph{Interação Humano-Computador (IHC)}
 Projeto mobile-first para público de baixa conectividade, hierarquia visual editorial, tratamento de estados vazios (placeholders SVG, aviso de contato indisponível) e jornada de conversão em 4 passos.
 
-
 \paragraph{Redes e Infraestrutura}
 Hospedagem estática em borda (entrega HTTP, cache e HTTPS delegados à plataforma), página completa em $\sim$42 KB para operação em redes 3G/4G restritas.
-
 
 \paragraph{Sustentabilidade Computacional (Green Software)}
 Arquitetura sem backend ocioso: zero consumo de CPU em nuvem fora do momento do acesso, em contraste com SPAs pesadas com runtime e SSR contínuos.
 
 
 
-
-
 \section{Conclusões e Aprendizados}
-
 
 A realização deste Projeto de Extensão V proporcionou experiência prática na análise de um microempreendimento real e no desenvolvimento de uma solução tecnológica sob medida para suas restrições --- financeiras, técnicas e operacionais. O contato direto com a marcenaria permitiu compreender que, para pequenos negócios informais, a melhor engenharia é a que o próprio artesão consegue sustentar.
 
-
 O projeto demonstrou, em caráter de demonstração acadêmica, como uma intervenção frugal pode profissionalizar a apresentação comercial e organizar o atendimento sem impor custos ou complexidade ao parceiro comunitário.
 
-
 \paragraph{Principais Aprendizados}
+\begin{itemize}[leftmargin=*]
+\item Desenvolvimento web estático performático e responsivo;
+\item Engenharia frugal e análise de custo total (TCO) como critério arquitetural;
+\item Validação automatizada e testes de compatibilidade local (\texttt{file://});
+\item Publicação e versionamento com GitHub (PR, merge, Pages);
+\item Levantamento de requisitos com cliente não técnico e formalização via Termo de Autorização;
+\item Escrita técnica acadêmica com evidências comprobatórias.
+\end{itemize}
+
+Além do crescimento técnico, o projeto reforçou a importância da extensão universitária como ponte entre o conhecimento acadêmico e as necessidades concretas da comunidade local.
+
+
+
+\section{Evidências Comprobatórias}
+
+\paragraph{Repositório do Código-Fonte}
+https://github.com/EmiyaKiritsugu3/PEX_V
+
+\paragraph{Website do Projeto (GitHub Pages)}
+https://emiyakiritsugu3.github.io/PEX_V/
+
+\paragraph{Estrutura do Projeto}
 \begin{itemize}[leftmargin=*]
 \item \texttt{index.html} $\to$ vitrine completa (HTML5 + CSS responsivo + JS inline);
 \item \texttt{check.py} $\to$ verificador automatizado de integridade;
@@ -225,7 +297,6 @@ O projeto demonstrou, em caráter de demonstração acadêmica, como uma interve
 \item \texttt{docs/superpowers/} $\to$ especificação técnica e plano de engenharia;
 \item \texttt{Termo de Autorização} $\to$ preenchido e conferido com a organização parceira (JS Planejados -- Móveis sob medida, São João do Sabugi/RN); mantido fora do repositório público por conter dados sensíveis (CNPJ), arquivado junto à documentação da disciplina.
 \end{itemize}
-
 
 \paragraph{Interfaces Desenvolvidas}
 \begin{itemize}[leftmargin=*]
@@ -238,8 +309,7 @@ O projeto demonstrou, em caráter de demonstração acadêmica, como uma interve
 
 
 
-
-% Fotos da oficina (seção 9/12): no Overleaf, envie os arquivos
+% Fotos da oficina: no Overleaf, envie os arquivos
 % fotos/oficina-bancada.jpg, fotos/oficina-serra.jpg e fotos/oficina-paineis.jpg
 % e descomente o bloco abaixo.
 %\begin{figure}[h]
