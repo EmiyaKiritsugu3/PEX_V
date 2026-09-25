@@ -64,10 +64,10 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 A equipe operacional consiste em uma única pessoa, responsável tanto pela produção física dos móveis quanto pela administração. A interface precisa ser autoexplicativa, sem exigir painel administrativo (CMS) complexo ou logins.
 
 ### 5.2 Fator Financeiro (TCO Zero)
-O projeto adota a premissa de custo contínuo igual a zero. Utiliza arquitetura estática suportada por plataformas de borda gratuitas (Vercel ou Netlify Drop), sem necessidade de banco de dados relacional pago ou serviços em segundo plano.
+O projeto adota a premissa de custo contínuo igual a zero. Utiliza arquitetura estática publicada em plataforma de borda gratuita (GitHub Pages), sem necessidade de banco de dados relacional pago ou serviços em segundo plano.
 
 ### 5.3 Fator de Mobilidade e Conectividade
-A grande maioria dos clientes acessa a plataforma via smartphone em conexões de baixa largura de banda. A página inteira deve pesar menos de 15 KB (excluindo imagens), sem bloqueios de renderização por bibliotecas pesadas.
+A grande maioria dos clientes acessa a plataforma via smartphone em conexões de baixa largura de banda. A página completa pesa ~42 KB (excluindo imagens), sem bloqueios de renderização por bibliotecas pesadas.
 
 ### 5.4 Fator de Sustentabilidade Técnica (Green Software Engineering)
 Evitou-se o desperdício computacional típico de SPAs pesadas (Node runtime, SSR, ORM). O código HTML/CSS puro roda diretamente no cliente sem consumo ocioso de CPU em nuvem.
@@ -93,12 +93,15 @@ projeto_de_extensão_V/
 ├── index.html                     # Vitrine completa (HTML5 + CSS responsivo + JS inline)
 ├── check.py                       # Verificador automatizado de integridade
 ├── .gitignore                     # Governança de repositório
-├── fotos/                         # Diretório local para assets de imagem
-│   └── .gitkeep
+├── fotos/                         # Registro fotográfico real da oficina
+│   ├── oficina-bancada.jpg
+│   ├── oficina-serra.jpg
+│   └── oficina-paineis.jpg
 └── docs/
     ├── relatorio-extensao-V.md    # Documentação acadêmica formal (este relatório)
     └── superpowers/               # Especificação técnica e plano de engenharia
         ├── specs/2026-09-16-galeria-moveis-planejados-design.md
+        ├── specs/2026-09-21-pex-v-nota-academica-design.md
         └── plans/2026-09-16-galeria-moveis-planejados.md
 ```
 
@@ -106,7 +109,7 @@ projeto_de_extensão_V/
 1. **Hero Section:** Proposta de valor direta e chamada principal de ação;
 2. **Sobre:** Apresentação da procedência artesanal e atendimento direto;
 3. **Galeria de Modelos:** 6 nichos padronizados com mensagens específicas de orçamento;
-4. **Fluxo de 4 Passos:** Explicação didática da jornada do cliente (Contato → Medição → Produção → Entrega);
+4. **Fluxo de 4 Passos:** Explicação didática da jornada do cliente (Conversa → Cotação → Produção → Entrega/Instalação);
 5. **Canal de Contato Flutuante e Fixo:** Garantia de acessibilidade permanente ao botão de orçamento.
 
 ---
@@ -162,7 +165,7 @@ O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga
 A intervenção entregou uma vitrine digital funcional, publicada e validada, que centraliza a apresentação dos modelos fabricáveis e qualifica o primeiro contato via WhatsApp. Mesmo em caráter de demonstração acadêmica, foi possível estruturar:
 
 * Vitrine de página única publicada em URL pública, com carregamento instantâneo;
-* Galeria de 6 modelos padronizados (quarto, cozinha, sala, home office, banheiro, estante) com mensagens de orçamento específicas;
+* Galeria de 6 modelos padronizados (guarda-roupa, cozinha, rack/painel, home office, gabinete de banheiro, estante) com mensagens de orçamento específicas;
 * Registro fotográfico real da oficina (bancada, serra, painéis) integrado à seção Sobre;
 * Canal de conversão direto via WhatsApp, com fallback informativo quando o número comercial ainda não está configurado;
 * Custo recorrente zero e manutenção delegável ao próprio artesão.
@@ -194,7 +197,7 @@ Aplicação dos princípios YAGNI e KISS, validação automatizada estática (`c
 Projeto mobile-first para público de baixa conectividade, hierarquia visual editorial, tratamento de estados vazios (placeholders SVG, aviso de contato indisponível) e jornada de conversão em 4 passos.
 
 **Redes e Infraestrutura**
-Hospedagem estática em borda (entrega HTTP, cache e HTTPS delegados à plataforma), página completa em ~40 KB para operação em redes 3G/4G restritas.
+Hospedagem estática em borda (entrega HTTP, cache e HTTPS delegados à plataforma), página completa em ~42 KB para operação em redes 3G/4G restritas.
 
 **Sustentabilidade Computacional (Green Software)**
 Arquitetura sem backend ocioso: zero consumo de CPU em nuvem fora do momento do acesso, em contraste com SPAs pesadas com runtime e SSR contínuos.
@@ -233,12 +236,12 @@ https://emiyakiritsugu3.github.io/PEX_V/
 * `fotos/` → `oficina-bancada.jpg`, `oficina-serra.jpg`, `oficina-paineis.jpg` (registro real da oficina);
 * `docs/relatorio-extensao-V.md` → documentação acadêmica formal (este relatório);
 * `docs/superpowers/` → especificação técnica e plano de engenharia;
-* `Termo+de+Autorizacao-PEX-preenchido-final.pdf` → Termo de Autorização preenchido e conferido com a organização parceira (JS Planejados – Móveis sob medida, São João do Sabugi/RN).
+* `Termo de Autorização` → preenchido e conferido com a organização parceira (JS Planejados – Móveis sob medida, São João do Sabugi/RN); mantido fora do repositório público por conter dados sensíveis (CNPJ), arquivado junto à documentação da disciplina.
 
 **Interfaces Desenvolvidas**
 * Hero com proposta de valor e chamada para WhatsApp;
 * Seção Sobre com procedência artesanal, esquema técnico e fotos da oficina;
 * Galeria de 6 modelos sob medida com orçamento contextual por modelo;
-* Fluxo de 4 passos (Contato → Cotação → Produção → Entrega);
+* Fluxo de 4 passos (Conversa → Cotação → Produção → Entrega/Instalação);
 * Contato fixo e botão flutuante de WhatsApp com fallback informativo.
 
