@@ -127,7 +127,7 @@ O desenvolvimento do projeto foi dividido em etapas organizadas conforme a carga
 ### 8.2 Design e Prototipação (8 horas)
 
 **Atividades Realizadas**
-* Elaboração da especificação técnica (`docs/superpowers/specs/2026-09-21-pex-v-nota-academica-design.md`);
+* Elaboração da especificação técnica do projeto (documento local de trabalho, fora do repositório);
 * Definição da identidade editorial artesanal (tipografia Fraunces + Outfit + DM Mono, paleta madeira/linho);
 * Prototipação da estrutura de página única: Hero, Sobre, Galeria de Modelos (6 nichos), Fluxo em 4 passos e Contato;
 * Desenho dos esquemas técnicos em SVG inline como placeholders tolerantes à ausência de fotos.
@@ -233,7 +233,6 @@ https://emiyakiritsugu3.github.io/PEX_V/
 * `check.py` → verificador automatizado de integridade;
 * `fotos/` → `oficina-bancada.jpg`, `oficina-serra.jpg`, `oficina-paineis.jpg` (registro real da oficina);
 * `docs/relatorio-extensao-V.md` → documentação acadêmica formal (este relatório);
-* `docs/superpowers/` → especificação técnica e plano de engenharia;
 * `Termo de Autorização` → preenchido e conferido com a organização parceira (JS Planejados – Móveis sob medida, São João do Sabugi/RN); mantido fora do repositório público por conter dados sensíveis (CNPJ), arquivado junto à documentação da disciplina.
 
 **Interfaces Desenvolvidas**

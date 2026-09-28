@@ -2,3 +2,6 @@
 *.pdf
 # Local session handoff (agent scratch, never commit).
 HANDOFF.md
+
+# Documentos locais de trabalho (specs/planos do agente).
+docs/superpowers/
