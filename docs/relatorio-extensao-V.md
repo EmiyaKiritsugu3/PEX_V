@@ -100,8 +100,7 @@ projeto_de_extensão_V/
 └── docs/
     ├── relatorio-extensao-V.md    # Relatório original (Markdown)
     ├── relatorio-extensao-V.tex   # Relatório p/ Overleaf (LaTeX)
-    ├── referencias.bib            # Bibliografia (BibTeX/ABNT)
-    └── superpowers/               # Specs e plano de engenharia
+    └── referencias.bib            # Bibliografia (BibTeX/ABNT)
 ```
 
 ### Principais Seções Implementadas
