@@ -49,10 +49,10 @@ Como intervenção tecnológica, desenvolveu-se uma plataforma web estática de 
 A marcenaria em análise opera no modelo sob encomenda, focada na fabricação de armários, cozinhas compactas, bancadas de trabalho e nichos planejados. Embora o artesão detenha excelente domínio prático do ofício, o empreendimento sofria de severas restrições operacionais e mercadológicas:
 
 \begin{enumerate}[leftmargin=*]
-\item[\textbf{Dependência Exclusiva do Boca a Boca:}] A clientela restringia-se ao círculo imediato de vizinhança e indicações familiares.
-\item[\textbf{Ausência de Referencial Visual Padronizado:}] Clientes solicitavam orçamentos sem conhecer o padrão de acabamento, exigindo visitas presenciais demoradas ou envio desordenado de fotos dispersas na galeria do celular.
-\item[\textbf{Assimetria de Informações na Triagem:}] As conversas iniciais demandavam tempo excessivo do marceneiro para explicar modelos básicos, medidas aproximadas e prazos, subtraindo horas produtivas da bancada de trabalho.
-\item[\textbf{Vulnerabilidade Financeira:}] Impossibilidade de arcar com mensalidades de plataformas SaaS (Shopify, Wix, construtores pagos) ou custos de servidores dedicados em nuvem.
+\item \textbf{Dependência Exclusiva do Boca a Boca:} A clientela restringia-se ao círculo imediato de vizinhança e indicações familiares.
+\item \textbf{Ausência de Referencial Visual Padronizado:} Clientes solicitavam orçamentos sem conhecer o padrão de acabamento, exigindo visitas presenciais demoradas ou envio desordenado de fotos dispersas na galeria do celular.
+\item \textbf{Assimetria de Informações na Triagem:} As conversas iniciais demandavam tempo excessivo do marceneiro para explicar modelos básicos, medidas aproximadas e prazos, subtraindo horas produtivas da bancada de trabalho.
+\item \textbf{Vulnerabilidade Financeira:} Impossibilidade de arcar com mensalidades de plataformas SaaS (Shopify, Wix, construtores pagos) ou custos de servidores dedicados em nuvem.
 \end{enumerate}
 
 
@@ -69,9 +69,9 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 
 \subsection{Principais Problemas Identificados}
 \begin{itemize}[leftmargin=*]
-\item[\textbf{Custo de Oportunidade Elevado:}] O tempo gasto em triagens repetitivas reduzia o tempo de fabricação e montagem;
-\item[\textbf{Falta de Vitrine Centralizada 24/7:}] Perda de oportunidades comerciais fora do horário de trabalho;
-\item[\textbf{Fragmentação Visual:}] Comunicação amadora e sem identidade consolidada.
+\item \textbf{Custo de Oportunidade Elevado:} O tempo gasto em triagens repetitivas reduzia o tempo de fabricação e montagem;
+\item \textbf{Falta de Vitrine Centralizada 24/7:} Perda de oportunidades comerciais fora do horário de trabalho;
+\item \textbf{Fragmentação Visual:} Comunicação amadora e sem identidade consolidada.
 \end{itemize}
 
 
@@ -79,7 +79,7 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 \section{Análise de Causa Raiz -- Técnica dos 5 Porquês}
 
 \begin{itemize}[leftmargin=*]
-\item[\textbf{Problema Central:}] Baixo volume de orçamentos qualificados e sobrecarga de atendimento manual.
+\item \textbf{Problema Central:} Baixo volume de orçamentos qualificados e sobrecarga de atendimento manual.
 \end{itemize}
 \begin{enumerate}[leftmargin=*]
 \item \textit{Por que os orçamentos demoravam a fechar?} O cliente não tinha clareza prévia sobre modelos, medidas e acabamentos oferecidos.
@@ -89,7 +89,7 @@ A marcenaria em análise opera no modelo sob encomenda, focada na fabricação d
 \item \textit{Por que não se adotou uma solução simplificada antes?} Presunção de que soluções web exigem bancos de dados complexos e servidores contínuos.
 \end{enumerate}
 \begin{itemize}[leftmargin=*]
-\item[\textbf{Causa Raiz Identificada:}] Falta de uma solução tecnológica sob medida, regida pela frugalidade, que conecte a vitrine ao canal direto de conversão (WhatsApp) sem custos e sem atrito operacional.
+\item \textbf{Causa Raiz Identificada:} Falta de uma solução tecnológica sob medida, regida pela frugalidade, que conecte a vitrine ao canal direto de conversão (WhatsApp) sem custos e sem atrito operacional.
 \end{itemize}
 
 
@@ -116,10 +116,10 @@ Em contraste com o PEX IV (onde a complexidade pedagógica e biométrica exigia 
 
 \subsection{Decisão Arquitetural: Arquitetura Estática Desacoplada}
 \begin{itemize}[leftmargin=*]
-\item[\textbf{Arquivo Único (\texttt{index.html}):}] CSS e JS estritamente inline, garantindo carregamento atômico em uma única requisição HTTP;
-\item[\textbf{Galeria Tolerante a Falhas:}] Estrutura concebida para exibir placeholders informativos caso as fotos estejam ausentes, e substituição gradual por fotos locais na pasta \texttt{fotos/} com tratativa nativa de erro (\texttt{onerror});
-\item[\textbf{Encaminhamento Semântico via WhatsApp (\texttt{wa.me}):}] Botões contextuais para cada modelo com mensagens pré-codificadas (\texttt{encodeURIComponent}), entregando o cliente já qualificado para o fechamento da venda;
-\item[\textbf{Validação Automatizada Local (\texttt{check.py}):}] Script em Python puro para verificação estática de integridade (links, tags, integridade de caminhos de imagem e ausência de bloqueios em ambiente local \texttt{file://}).
+\item \textbf{Arquivo Único (\texttt{index.html}):} CSS e JS estritamente inline, garantindo carregamento atômico em uma única requisição HTTP;
+\item \textbf{Galeria Tolerante a Falhas:} Estrutura concebida para exibir placeholders informativos caso as fotos estejam ausentes, e substituição gradual por fotos locais na pasta \texttt{fotos/} com tratativa nativa de erro (\texttt{onerror});
+\item \textbf{Encaminhamento Semântico via WhatsApp (\texttt{wa.me}):} Botões contextuais para cada modelo com mensagens pré-codificadas (\texttt{encodeURIComponent}), entregando o cliente já qualificado para o fechamento da venda;
+\item \textbf{Validação Automatizada Local (\texttt{check.py}):} Script em Python puro para verificação estática de integridade (links, tags, integridade de caminhos de imagem e ausência de bloqueios em ambiente local \texttt{file://}).
 \end{itemize}
 
 
@@ -145,11 +145,11 @@ projeto_de_extensão_V/
 
 \subsection{Principais Seções Implementadas}
 \begin{enumerate}[leftmargin=*]
-\item[\textbf{Hero Section:}] Proposta de valor direta e chamada principal de ação;
-\item[\textbf{Sobre:}] Apresentação da procedência artesanal e atendimento direto;
-\item[\textbf{Galeria de Modelos:}] 6 nichos padronizados com mensagens específicas de orçamento;
-\item[\textbf{Fluxo de 4 Passos:}] Explicação didática da jornada do cliente (Conversa $\to$ Cotação $\to$ Produção $\to$ Entrega/Instalação);
-\item[\textbf{Canal de Contato Flutuante e Fixo:}] Garantia de acessibilidade permanente ao botão de orçamento.
+\item \textbf{Hero Section:} Proposta de valor direta e chamada principal de ação;
+\item \textbf{Sobre:} Apresentação da procedência artesanal e atendimento direto;
+\item \textbf{Galeria de Modelos:} 6 nichos padronizados com mensagens específicas de orçamento;
+\item \textbf{Fluxo de 4 Passos:} Explicação didática da jornada do cliente (Conversa $\to$ Cotação $\to$ Produção $\to$ Entrega/Instalação);
+\item \textbf{Canal de Contato Flutuante e Fixo:} Garantia de acessibilidade permanente ao botão de orçamento.
 \end{enumerate}
 
 
