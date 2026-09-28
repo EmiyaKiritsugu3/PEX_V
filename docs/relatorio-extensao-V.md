@@ -233,6 +233,8 @@ https://emiyakiritsugu3.github.io/PEX_V/
 * `check.py` → verificador automatizado de integridade;
 * `fotos/` → `oficina-bancada.jpg`, `oficina-serra.jpg`, `oficina-paineis.jpg` (registro real da oficina);
 * `docs/relatorio-extensao-V.md` → documentação acadêmica formal (este relatório);
+* `docs/relatorio-extensao-V.tex` → código-fonte LaTeX deste relatório (Overleaf);
+* `docs/referencias.bib` → bibliografia BibTeX em padrão ABNT;
 * `Termo de Autorização` → preenchido e conferido com a organização parceira (JS Planejados – Móveis sob medida, São João do Sabugi/RN); mantido fora do repositório público por conter dados sensíveis (CNPJ), arquivado junto à documentação da disciplina.
 
 **Interfaces Desenvolvidas**
