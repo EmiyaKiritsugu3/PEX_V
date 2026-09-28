@@ -90,16 +90,18 @@ Em contraste com o PEX IV (onde a complexidade pedagógica e biométrica exigia 
 
 ```text
 projeto_de_extensão_V/
-├── index.html                     # Vitrine completa (HTML5 + CSS responsivo + JS inline)
-├── check.py                       # Verificador automatizado de integridade
-├── .gitignore                     # Governança de repositório
-├── fotos/                         # Registro fotográfico real da oficina
+├── index.html                     # Vitrine (HTML+CSS+JS inline)
+├── check.py                       # Verificador de integridade
+├── .gitignore                     # Governança do repositório
+├── fotos/                         # Fotos reais da oficina
 │   ├── oficina-bancada.jpg
 │   ├── oficina-serra.jpg
 │   └── oficina-paineis.jpg
 └── docs/
-    ├── relatorio-extensao-V.md    # Documentação acadêmica formal (este relatório)
-    └── superpowers/               # Especificação técnica e plano de engenharia
+    ├── relatorio-extensao-V.md    # Relatório original (Markdown)
+    ├── relatorio-extensao-V.tex   # Relatório p/ Overleaf (LaTeX)
+    ├── referencias.bib            # Bibliografia (BibTeX/ABNT)
+    └── superpowers/               # Specs e plano de engenharia
         ├── specs/2026-09-16-galeria-moveis-planejados-design.md
         ├── specs/2026-09-21-pex-v-nota-academica-design.md
         └── plans/2026-09-16-galeria-moveis-planejados.md
